@@ -1,0 +1,52 @@
+/*---------------------------------------------------------
+At widths < 625px, the circle images become too small to be
+effective, this sets them up as a standard list with the
+default crcle as the background icon
+
+!importand declarations are to override javascript
+----------------------------------------------------------*/
+@media only screen and (max-width: 625px) {
+  
+  ul.circles li img{
+    display:none;
+  }
+
+  ul.circles li {
+    float:none;
+    display:block;
+    max-width: 100% !important;
+    margin-top: 4% !important;
+    margin-left: 0 !important;
+    margin-bottom: 4% !important;
+    margin-right: 0 !important;
+    padding: 5px 0 5px 35px;
+    background:url(../images/circles/circle.png) no-repeat;
+    background-size: 30px;
+  }
+  ul.circles li span{
+    font-size:100%;
+    position: static;
+    color: #4E4D4C;
+    top: 34% !important;
+  }
+  ul.circles li.active span{
+    font-size:100%;
+    color:#4E4D4C;
+  }
+  ul.circles li a:hover{
+    text-decoration: underline;
+  }
+
+}
+
+/* 660 cutoff for carousel font sizes */
+@media only screen and (max-width: 660px) {
+
+  .jcarousel-skin-nextlevel .jcarousel-item p {
+    font-size: 80%;
+  }
+  .jcarousel-skin-nextlevel .jcarousel-item.selected p span {
+    font-size:50%;
+  }
+  
+}

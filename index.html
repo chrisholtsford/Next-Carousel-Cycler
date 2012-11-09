@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="CodeGreen Development">
+
+	<link href='http://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
+	<link href="./css/reset.css" rel="stylesheet">
+	<link href="./css/main-slater.css" rel="stylesheet">
+	<link href="./css/responsive-slater.css" rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="scripts/jquery.carousel.min.js"></script>
+	<script src="scripts/main.carousel.js"></script>
+	<script src="scripts/circles.js"></script>
+
+  </head>
+  <body>
+
+     <div class="wrapper">
+
+		<!-- slideshow -->
+
+     	<div class="slide-row">
+     		<div class="c-wrap">
+          
+          
+          <!----------------------------------------------------
+          This ul is all you need to set up in the HTML for the
+          Carousel.
+          
+          jquery.carousel.js is the plugin
+          main.carousel.js contains all the customized js to setup
+          the carousel based on this markup
+          
+          class "jcarousel-skin-nextlevel" is used to namespace
+          the carousel css classes.
+          
+          The lis below are expanded to display the attributes.
+          - "data-text" is always displayed on the item
+          - "data-selected" is added to the item in the center
+          - "data-url" is the link - active only for the center item
+          
+          Images below should be the maximum size of the expanded
+          image. Smaller screen widths will resize the image as
+          needed.
+          
+          The sample circle images are 400 x 400 
+          
+          -------------------------------------------------------->
+          
+				  <ul id="carousel" class="jcarousel-skin-nextlevel">
+				    <li
+				      data-text="Image 1"
+				      data-selected="Send me to yahoo"
+				      data-url="http://yahoo.com"
+				    >
+				      <img src="images/carousel/2.png">
+				    </li>
+				    <li
+				      data-text="Business and Executive Coaching"
+				      data-selected="Lorem ipsum dolor sit amet, consectetur adipiscing elit cras tortor nisi."
+				      data-url="http://google.com"
+				    >
+				      <img src="images/carousel/1.png">
+				    </li>
+				    <li
+				      data-text="Image 3"
+				      data-selected="Send me to The Onion"
+				      data-url="http://theonion.com"
+				    >
+				      <img src="images/carousel/3.png">
+				    </li>
+				    <li
+				      data-text="Image 4"
+				      data-selected="Send me to reddit"
+				      data-url="http://reddit.com"
+				    >
+				      <img src="images/carousel/4.png">
+				    </li>
+				    <li
+				      data-text="Image 5"
+				      data-selected="Send me to no treble"
+				      data-url="http://notreble.com"
+				    >
+				      <img src="images/carousel/5.png">
+				    </li>
+				  </ul>
+     		</div>
+     	</div>
+           
+		<!-- row 1 -->
+
+     	<div class="c-row-1">
+     		<div class="c-wrap">
+
+				<div class="col1">
+					<h2 class="karla">Cras dolor quis leo</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tortor nisi, nec ultricies tempus, lacinia egestas dui. Praesent tristique malesuada. Augue ut ipsum rhoncus luctus blandit at mauris. Aenean mollis lectus vitae diam sollicitudin bibendum. Pellentesque sit amet metus quis massa viverra iaculis. In eget nisl eget mi molestie ultricies. Sed nec mauris sem.</p>
+				</div>
+
+				<div class="col2">
+					test
+				</div>
+
+     			<div class="clearfix">&nbsp;</div>
+
+     		</div>
+     	</div>
+
+		<!-- row 2 -->
+
+     	<div class="c-row-2">
+     		<div class="c-wrap">
+
+        <!-------------------------------------------------------
+        
+        List of link circles below is flexible. Will be animated
+        hover states for screen widths above 625px. Otherwise,
+        displayed as list of links
+        
+        -------------------------------------------------------->
+				<ul class="circles karla">
+					<li>
+					  <a href="#">
+  					  <img class="off" src="images/circles/circle.png">
+  					  <span>Schedule Free Session</span>
+            </a>
+					</li>
+					<li>
+					  <a href="#">
+  					  <img class="off" src="images/circles/circle.png">
+  					  <span>Our &quot;Why&quot; and What We Believe</span>
+					  </a>
+					</li>
+					<li>
+					  <a href="#">
+  					  <img class="off" src="images/circles/circle.png">
+  					  <span>About Scott and Pam</span>
+            </a>
+					</li>
+					<li>
+					  <a>
+  					  <img class="off" src="images/circles/circle.png">
+  					  <span>What Our Clients Say</span>
+					  </a>
+					</li>
+					<li>
+					  <a href="#">
+  					  <img class="off" src="images/circles/circle.png">
+  					  <span>Our Guarantee</span>
+					  </a>
+					</li>
+				</ul>
+
+     		<div class="clearfix">&nbsp;</div>
+
+
+     	</div>
+
+     </div>
+
+  </body>
+</html>
