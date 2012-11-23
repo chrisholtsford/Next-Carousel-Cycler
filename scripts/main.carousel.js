@@ -1,6 +1,7 @@
 var nextCarousel = nextCarousel || {
 
-  height : 'auto',
+  height : 'auto',  // Initial value set to same as CSS
+                    // used during animation to lock carousel height
   $carousel : {},
 
   // "A noble spirit enbiggens the smallest man" - Jebediah Springfield
@@ -43,11 +44,12 @@ var nextCarousel = nextCarousel || {
 
   beforeMove : function(carousel, li, index, state) {
   
-      // Figure out the new and previous slected carousel items
-      // Set them as jQuery objects
+    // Figure out the new and previous slected carousel items
     var $previousSelected = nextCarousel.$carousel.find('li.selected'),
-        newSelectedIndex = (state === 'next') ? (index + 1) : (index - 1),
-        $newSelected = nextCarousel.$carousel.find('li:eq(' + newSelectedIndex + ')');
+        $newSelected = (state === 'next') ?
+          $previousSelected.next('li') :
+          $previousSelected.prev('li');
+
       
     // Clear All item events
     nextCarousel.$carousel.find('li').off();
@@ -68,13 +70,7 @@ var nextCarousel = nextCarousel || {
   },
 
   initBefore : function() {
-    //Add the data-text attributes to the captions
-    var placeholder = 
-        placeholder2 = 
-        '<li data-text="&nbsp;" data-selected="&nbsp;" data-url="#" class="placeholder"><img src="images/carousel/placeholder.png"></li>';
-
-    $('#carousel').append(placeholder)
-                  .find('li:eq(0)').before(placeholder2);
+    // Insert Pre-Plugin Initializations Here
   },
 
   next : function() {
@@ -98,6 +94,9 @@ var nextCarousel = nextCarousel || {
     // '#carousel li:eq(1)' is the initial center carousel item 
     nextCarousel.embiggen(nextCarousel.$carousel.find('li:eq(1)'));
 
+    // '#carousel li:eq(0)' is the initial leftmost carousel item 
+    nextCarousel.$carousel.find('li:eq(0)').one('click', nextCarousel.prev);
+
     // '#carousel li:eq(2)' is the initial rightmost carousel item 
     nextCarousel.$carousel.find('li:eq(2)').one('click', nextCarousel.next);
   
@@ -111,14 +110,16 @@ var nextCarousel = nextCarousel || {
     });
   }
 };
+
 $(document).ready(function() {
-    nextCarousel.initBefore();
+    //nextCarousel.initBefore();
         
     nextCarousel.$carousel = $('#carousel').jcarousel({
         scroll: 1,
         visible: 3,
         buttonNextHTML: '<img id="triggerNext" src="images/next.png">',
         buttonPrevHTML: '<img id="triggerPrev" src="images/prev.png">',
+        wrap: 'circular',
         setupCallback: nextCarousel.initAfter,
         itemFirstOutCallback: {
           onBeforeAnimation: nextCarousel.beforeMove,
